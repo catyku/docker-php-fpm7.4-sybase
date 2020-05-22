@@ -1,0 +1,13 @@
+php:
+    build: .
+    working_dir: /var/www/html
+    environment:
+        PHP_FPM_USER: root
+        PHP_FPM_PORT: 9000
+        PHP_ERROR_REPORTING: E_ALL
+        ENVIRONMENT: staging
+    volumes:
+        - /var/www/:/var/www/
+        - /etc/freetds/:/etc/freetds/
+    ports:
+        - "127.0.0.1:9001:9000"
